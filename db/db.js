@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/Weather");
+mongoose.connect("mongodb://localhost/word");
 
 var db = mongoose.connection;
 
