@@ -1,16 +1,24 @@
 angular
   .module("app")
   .controller("AppCtrl", function($scope, $http) {
-    (this.ShowMeaning = word => {
+    (this.clear = function() {
       $http({
         method: "POST",
-        url: "/data",
-        data: { name: word },
-        headers: { "Content-Type": "application/json" }
+        url: "/clear"
       }).then(function() {
         window.location.reload();
       });
     }),
+      (this.ShowMeaning = function(word) {
+        $http({
+          method: "POST",
+          url: "/data",
+          data: { name: word },
+          headers: { "Content-Type": "application/json" }
+        }).then(function() {
+          window.location.reload();
+        });
+      }),
       $http({
         method: "GET",
         url: "/data"
