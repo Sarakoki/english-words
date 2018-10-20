@@ -24,7 +24,8 @@ var saveWord = function(data) {
   }
   obj = {
     Word: data.name,
-    Meaning: data.word[0].description
+    Meaning: data.results[0].lexicalEntries[0].entries[0].senses[0].definitions
+    //Meaning2: data.results.lexicalEntries.entries.senses[0].subsenses[0].definitions
   };
 
   var word = new Word(obj);
