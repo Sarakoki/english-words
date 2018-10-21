@@ -19,11 +19,11 @@ const englishWordSchema = mongoose.Schema({
 var Word = mongoose.model("Word", englishWordSchema);
 
 var saveWord = function(data) {
-  if (!data.name) {
-    return console.log("no data");
-  }
-  obj = {
-    Word: data.name,
+  // if (!data.word) {
+  //   return console.log("no data");
+  // }
+  var obj = {
+    Word: data.results[0].id,
     Meaning: data.results[0].lexicalEntries[0].entries[0].senses[0].definitions
     //Meaning2: data.results.lexicalEntries.entries.senses[0].subsenses[0].definitions
   };
