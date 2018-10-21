@@ -5,21 +5,25 @@
   <br>
   <input style="height: 70px ;width: 225px; font-size: 40px; color:rgb(255, 255, 255); background-color: rgb(226, 177, 54); border-radius: 25px;float: left; position: absolute; top: 200px;
   left: 50;"
-    type="submit" value="Word" ng-click="$ctrl.clear()">
+    type="submit" value="Word">
   <input id=" txt" type="text" style="height: 70px; width: 400px; font-size: 40px; color: rgb(0, 0, 0); float: left; position: absolute; top: 200px;
     left: 300;"
     placeholder="Enter A Word" ng-model="name"><br><br><br>
   <input style="height: 70px; width: 250px; font-size: 40px; color:rgb(255, 255, 255); background-color: rgb(124, 163, 66); border-radius: 20px;position: absolute; top: 250px;
   left: 750;"
     type="Submit" value="Definition" ng-click='$ctrl.ShowMeaning(name)'>
+  <input style="height: 70px; width: 250px; font-size: 40px; color:rgb(255, 255, 255); background-color: rgb(214, 58, 58); border-radius: 20px;position: absolute; top: 350px;
+  left: 750;"
+    type="Submit" value="Delete" ng-click='$ctrl.clear(name)'>
   <div><br>
     <br><br>
-    <div style="background-color: rgb(255, 255, 255); height: 300px;width: 650px; font-size: 60px; float: bottom; position: absolute; top: 325px;
+    <div style="background-color: rgb(255, 255, 255); height: 700px;width: 650px; font-size: 60px; float: bottom; position: absolute; top: 325px;
     left:50;">
       <div ng-repeat="Word in Words | limitTo : 4" style=" color: rgb(34, 41, 41); ">
-        {{Word.Word}}
-        <br>
-        Meaning: {{Word.Meaning}}
+        <h1 style="color:forestgreen;font-size: 70px">{{Word.Word}}</h1>
+        {{Word.Meaning}}<br />
+        <h1 style="color:rgb(190, 46, 46);font-size: 50px">example:</h1>
+        {{Word.Example}}
       </div>
     </div>
 

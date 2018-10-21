@@ -13,19 +13,20 @@ db.once("open", function() {
 
 const englishWordSchema = mongoose.Schema({
   Word: String,
-  Meaning: String
+  Meaning: String,
+  Example: String
 });
 
 var Word = mongoose.model("Word", englishWordSchema);
 
 var saveWord = function(data) {
-  // if (!data.word) {
-  //   return console.log("no data");
-  // }
+  if (!data.word) {
+    return console.log("no data");
+  }
   var obj = {
-    Word: data.results[0].id,
-    Meaning: data.results[0].lexicalEntries[0].entries[0].senses[0].definitions
-    //Meaning2: data.results.lexicalEntries.entries.senses[0].subsenses[0].definitions
+    Word: data.word,
+    Meaning: data.meaning.verb[0].definition,
+    Example: data.meaning.noun[0].example
   };
 
   var word = new Word(obj);
@@ -34,6 +35,7 @@ var saveWord = function(data) {
       return console.log(err);
     }
     console.log("database saved");
+    //console.log(data);
   });
 };
 
