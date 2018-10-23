@@ -6,7 +6,9 @@ angular
         method: "POST",
         url: "/clear"
       }).then(function() {
-        window.location.reload();
+        // window.location.reload();
+        //window.print();
+        window.onload();
       });
     }),
       (this.ShowMeaning = function(word) {
@@ -16,7 +18,8 @@ angular
           data: { name: word },
           headers: { "Content-Type": "application/json" }
         }).then(function() {
-          window.location.reload();
+          // window.location.reload();
+          window.onload();
         });
       }),
       $http({

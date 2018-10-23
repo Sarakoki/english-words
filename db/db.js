@@ -25,7 +25,7 @@ var saveWord = function(data) {
   }
   var obj = {
     Word: data.word,
-    Meaning: data.meaning.verb[0].definition,
+    Meaning: data.meaning.noun[0].definition,
     Example: data.meaning.noun[0].example
   };
 

@@ -33,7 +33,6 @@ app.post("/data", function(req, res) {
     db.saveWord(data);
   });
   res.send(req.body);
-  console.log(req.body);
 });
 
 app.get("/data", function(req, res) {
