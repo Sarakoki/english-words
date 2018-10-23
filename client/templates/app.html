@@ -1,5 +1,6 @@
 <div>
-  <div class="container-fluied" Words="$ctrl.Words"></div>
+  <!-- Words="$ctrl.Words -->
+  <div class="container-fluied"></div>
   <h1 style="color: rgb(255, 255, 255); font-size: 50px; position: absolute; float: left; top: 75px;
   left: 90;">Dictionary</h1>
   <br>
@@ -12,18 +13,14 @@
   <input style="height: 70px; width: 250px; font-size: 40px; color:rgb(255, 255, 255); background-color: rgb(124, 163, 66); border-radius: 20px;position: absolute; top: 250px;
   left: 750;"
     type="Submit" value="Definition" ng-click='$ctrl.ShowMeaning(name)'>
-  <input style="height: 70px; width: 250px; font-size: 40px; color:rgb(255, 255, 255); background-color: rgb(214, 58, 58); border-radius: 20px;position: absolute; top: 350px;
-  left: 750;"
-    type="Submit" value="Delete" ng-click='$ctrl.clear(name)'>
   <div><br>
     <br><br>
-    <div style="background-color: rgb(255, 255, 255); height: 700px;width: 650px; font-size: 60px; float: bottom; position: absolute; top: 325px;
+    <div style="background-color: rgb(255, 255, 255); height: 800px;width: 650px; font-size: 60px; float: bottom; position: absolute; top: 325px;
     left:50;">
-      <div ng-repeat="Word in Words | limitTo : 4" style=" color: rgb(34, 41, 41); ">
-        <h1 style="color:forestgreen;font-size: 70px">{{Word.Word}}</h1>
-        {{Word.Meaning}}<br />
-        <h1 style="color:rgb(190, 46, 46);font-size: 50px">example:</h1>
-        {{Word.Example}}
+      <div style=" color: rgb(34, 41, 41); ">
+        <h1 style="color:forestgreen;font-size: 70px">{{myData.word}}</h1>
+        {{myData.meaning.noun[0].definition}}<br />
+        <h1 style="color:rgb(190, 46, 46);font-size: 40px"> {{myData.meaning.noun[0].example}}</h1>
       </div>
     </div>
 

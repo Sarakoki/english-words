@@ -1,38 +1,25 @@
 angular
   .module("app")
   .controller("AppCtrl", function($scope, $http) {
-    (this.clear = function() {
-      $http({
-        method: "POST",
-        url: "/clear"
-      }).then(function() {
-        // window.location.reload();
-        //window.print();
-        window.onload();
-      });
-    }),
-      (this.ShowMeaning = function(word) {
-        $http({
-          method: "POST",
-          url: "/data",
-          data: { name: word },
-          headers: { "Content-Type": "application/json" }
-        }).then(function() {
-          // window.location.reload();
-          window.onload();
-        });
-      }),
+    this.ShowMeaning = function(word, data) {
       $http({
         method: "GET",
-        url: "/data"
+        url:
+          "https://googledictionaryapi.eu-gb.mybluemix.net/?define=" +
+          word +
+          "&lang=en"
       }).then(
         function Done(res) {
-          $scope.Words = res.data;
+          $scope.myData = res.data;
+          $scope.statuscode = res.status;
+          console.log($scope.myData.meaning.noun[0].definition);
         },
         function Err(res) {
-          $scope.Words = res.statusText;
+          $scope.Word = res.statusText;
+          // console.log(res.statusText);
         }
       );
+    };
   })
   .component("app", {
     bindings: {},
