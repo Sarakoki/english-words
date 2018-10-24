@@ -20,7 +20,6 @@ Make sure you installed the following :
 
 - [Angularjs](https://angular.io/) - Front-end framework
 - [Nodejs](https://nodejs.org/) - the server
-- [MongoDB/mongoose](https://docs.mongodb.com/) - Database and ORM used
 
 ### Installation
 
@@ -37,10 +36,6 @@ $ npm install
 ```
 
 ### Usage
-
-```
-$ mongod
-```
 
 ```
 $ nodemon
